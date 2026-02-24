@@ -3,28 +3,18 @@ public:
     vector<int> twoSum(vector<int>& v, int target) {
         int n = v.size();
 
-    vector<pair<int,int>> result;
+        unordered_map<int,int> m;
+        int compliment;
 
-    for(int i=0 ; i<n ; i++){
-        result.push_back({v[i],i});
-    }
-    int l = 0;
-    int r = n-1;
+        for(int i=0 ; i<n ; i++){
+        compliment = target - v[i];
 
-    sort(result.begin(),result.end());
+        if(m.find(compliment) != m.end()){
+            return {m[compliment],i};
+        }
 
-    while(l<r){
-    int sum = result[l].first + result[r].first;
-    if(sum == target){
-        return {result[l].second,result[r].second};
-    }
-    else if(sum < target){
-        l++;
-    }
-    else{
-        r--;
-    }
-    }
-    return {};
+        m[v[i]] = i;
+        }
+        return {};
     }
 };
