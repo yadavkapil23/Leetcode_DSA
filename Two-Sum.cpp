@@ -1,14 +1,30 @@
 1class Solution {
 2public:
 3    vector<int> twoSum(vector<int>& nums, int target) {
-4        int n = nums.size();
-5        for(int i=0 ; i<n ; i++){
-6            for(int j=i+1 ; j<n ; j++){
-7                if(nums[i] + nums[j] == target){
-8                    return {i,j};
-9                }
-10            }
-11        }
-12        return {};
-13    }
-14};
+4        //2 ptr.
+5        int n = nums.size();
+6        vector<pair<int,int>> v;
+7        
+8        for(int i=0 ; i<n ; i++){
+9            v.push_back({nums[i],i});
+10        }
+11        
+12        sort(v.begin(),v.end());
+13        int left = 0;
+14        int right = n-1;
+15        while(left < right){
+16            int sum = v[left].first + v[right].first;
+17            if(sum == target){
+18                return {v[left].second,v[right].second};
+19                left++,right--;
+20            }
+21            else if(sum < target){
+22                left++;
+23            }
+24            else{
+25                right--;
+26            }
+27        }
+28        return {};
+29    }
+30};
