@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/integer-to-roman">Integer to Roman</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Seven different symbols represent Roman numerals with the following values:</p>
+# 12. Integer to Roman
+
+🟡 **Medium** &nbsp;|&nbsp; [View on LeetCode](https://leetcode.com/problems/integer-to-roman/)
+
+**Topics:** Hash Table, Math, String
+
+---
+
+<p>Seven different symbols represent Roman numerals with the following values:</p>
 
 <table>
 	<thead>
@@ -106,3 +114,8 @@ Note: 49 is not 1 (I) less of 50 (L) because the conversion is based on decimal 
 <ul>
 	<li><code>1 &lt;= num &lt;= 3999</code></li>
 </ul>
+
+
+---
+
+**My Solution:** [12-Integer-to-Roman.cpp](./12-Integer-to-Roman.cpp)
