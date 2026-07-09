@@ -1,55 +1,12 @@
 class Solution {
 public:
-    bool isFirstcapital(string word){
-        int count = 0;
-        if(!isupper(word[0])){
-            return false;
-        }
-        for(int i=1 ; i<word.size(); i++){
-            if(islower(word[i])){
-                continue;
-            }
-            else{
-                return false;
-            }
-        }
-
-        return true;
+   bool detectCapitalUse(string word) {
+    int upperCount = 0;
+    for (char c : word) {
+        if (isupper(c)) upperCount++;
     }
-
-
-    bool allsmall(string word){
-        for(int i=0 ; i<word.size() ; i++){
-            if(islower(word[i])){
-                continue;
-            }
-            else{
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    bool alllarge(string word){
-        for(int i=0 ; i<word.size() ; i++){
-            if(isupper(word[i])){
-                continue;
-            }
-            else{
-                return false;
-            }
-        }
-
-        return true;
-    }
-    bool detectCapitalUse(string word) {
-        int n = word.size();
-
-        if(isFirstcapital(word) || allsmall(word) || alllarge(word)){
-            return true;
-        }
-
-        return false;
-    }
+    
+    return upperCount == 0 || upperCount == word.size() || 
+           (upperCount == 1 && isupper(word[0]));
+}
 };
