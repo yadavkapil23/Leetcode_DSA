@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/permutations">Permutations</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an array <code>nums</code> of distinct integers, return all the possible <span data-keyword="permutation-array">permutations</span>. You can return the answer in <strong>any order</strong>.</p>
+# 46. Permutations
+
+🟡 **Medium** &nbsp;|&nbsp; [View on LeetCode](https://leetcode.com/problems/permutations/)
+
+**Topics:** Array, Backtracking
+
+---
+
+<p>Given an array <code>nums</code> of distinct integers, return all the possible <span data-keyword="permutation-array">permutations</span>. You can return the answer in <strong>any order</strong>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
@@ -19,3 +27,8 @@
 	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
 	<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
 </ul>
+
+
+---
+
+**My Solution:** [46-Permutations.cpp](./46-Permutations.cpp)
