@@ -2,7 +2,6 @@ class Solution {
 public:
     void backtrack(int sum,int index,vector<int> & candidates,int target,vector<int> &curr, vector<vector<int>> &ans){
         if(index==candidates.size()){
-             ans.push_back(curr);
             return;
         }
         if (target == 0) {
