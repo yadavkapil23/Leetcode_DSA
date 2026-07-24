@@ -1,19 +1,21 @@
 class Solution {
 public:
-    int climbStairs(int n) {
-
-        if(n==1){
+    int fn(int n, vector<int> &dp){
+        if(n==0 || n==1){
             return 1;
         }
-        int a = 1;
-        int b = 2;
 
-        for(int i=3 ; i<=n ; i++){
-            int res = a+b;
-            a = b;
-            b = res;
+        if(dp[n] != -1){
+            return dp[n];
         }
 
-        return b;
+        int first = fn(n-1,dp);
+        int second = fn(n-2,dp);
+
+        return dp[n] = first + second;
+    }
+    int climbStairs(int n) {
+        vector<int> dp(n+1,-1);
+        return fn(n,dp);
     }
 };
