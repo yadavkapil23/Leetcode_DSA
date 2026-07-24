@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/climbing-stairs">Climbing Stairs</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
+# 70. Climbing Stairs
+
+🟢 **Easy** &nbsp;|&nbsp; [View on LeetCode](https://leetcode.com/problems/climbing-stairs/)
+
+**Topics:** Math, Dynamic Programming, Memoization
+
+---
+
+<p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
 
 <p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>
 
@@ -30,3 +38,8 @@
 <ul>
 	<li><code>1 &lt;= n &lt;= 45</code></li>
 </ul>
+
+
+---
+
+**My Solution:** [70-Climbing-Stairs.cpp](./70-Climbing-Stairs.cpp)
