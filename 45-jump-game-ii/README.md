@@ -1,4 +1,12 @@
-<h2><a href="https://leetcode.com/problems/jump-game-ii">Jump Game II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a <strong>0-indexed</strong> array of integers <code>nums</code> of length <code>n</code>. You are initially positioned at&nbsp;index 0.</p>
+# 45. Jump Game II
+
+🟡 **Medium** &nbsp;|&nbsp; [View on LeetCode](https://leetcode.com/problems/jump-game-ii/)
+
+**Topics:** Array, Dynamic Programming, Greedy
+
+---
+
+<p>You are given a <strong>0-indexed</strong> array of integers <code>nums</code> of length <code>n</code>. You are initially positioned at&nbsp;index 0.</p>
 
 <p>Each element <code>nums[i]</code> represents the maximum length of a forward jump from index <code>i</code>. In other words, if you are at index <code>i</code>, you can jump to any index <code>(i + j)</code>&nbsp;where:</p>
 
@@ -33,3 +41,8 @@
 	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
 	<li>It&#39;s guaranteed that you can reach <code>nums[n - 1]</code>.</li>
 </ul>
+
+
+---
+
+**My Solution:** [45-Jump-Game-II.cpp](./45-Jump-Game-II.cpp)
