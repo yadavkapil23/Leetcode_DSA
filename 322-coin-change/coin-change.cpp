@@ -14,9 +14,9 @@ public:
 
         int take = INT_MAX;
         if (coins[n] <= amount) {
-            int sub = f(coins, n, amount - coins[n], dp);
-            if (sub != INT_MAX) {
-                take = 1 + sub;
+            int mincoinneededtofill = f(coins, n, amount - coins[n], dp);
+            if (mincoinneededtofill != INT_MAX) {
+                take = 1 + mincoinneededtofill;
             }
         }
 
