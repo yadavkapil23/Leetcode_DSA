@@ -15,18 +15,9 @@ public:
     }
 
 
-    int smallestNumber(int n, int t) {
-        bool flag = false;
-        int digit = 1;
-
-        while(true){
-            digit = product(n);
-           if(digit % t == 0){
-            return n;
-           }
-           n++;
-        }
-
-        return n;
+int smallestNumber(int n, int t) {
+    for(int i = n; ; i++){
+        if(product(i) % t == 0) return i;
     }
+}
 };
