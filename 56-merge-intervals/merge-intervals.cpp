@@ -19,7 +19,8 @@ public:
               int  newstart = min(a,c);
               int  newend = max(b,d);
 
-                ans.back() = {newstart,newend};
+               ans.pop_back();  // Remove the old merged interval
+               ans.push_back({newstart, newend});
             }
             else{
                 ans.push_back(intervals[i]);
