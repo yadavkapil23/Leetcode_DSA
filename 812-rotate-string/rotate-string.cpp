@@ -1,22 +1,15 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-    int n = s.size();
-	
-	string x = s;
+        if(s.size() != goal.size()){
+            return false;
+        }
 
-	int k = 0;
-    while(k<n){
-    s = x;
-	reverse(s.begin(),s.begin()+k);
-	reverse(s.begin()+k,s.end());
-    reverse(s.begin(),s.end());
-    
-    if(s == goal){
-        return true;
-    }
-      k++;
-    }
-    return false;  
+        string merged = goal + goal;
+        if(merged.find(s) != string::npos){
+            return true;
+        }
+
+        return false;
     }
 };
