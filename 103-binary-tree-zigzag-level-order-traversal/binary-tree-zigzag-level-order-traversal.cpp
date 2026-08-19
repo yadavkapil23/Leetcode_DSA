@@ -9,33 +9,36 @@ public:
 
         queue<TreeNode*> q;
         q.push(root);
-        bool islefttoright = true;
+
+        bool leftoright = true;
 
         while(!q.empty()){
             vector<int> ans;
-            int queuelen = q.size();
-            for(int i=0 ; i<queuelen ; i++){
-            TreeNode* element = q.front();
-            q.pop();
+            int n = q.size();
 
-            ans.push_back(element->val);
-            if(element->left != nullptr){
-                q.push(element->left);
+            for(int i=0 ; i<n ; i++){
+            TreeNode* curr = q.front();
+             q.pop();
+
+              ans.push_back(curr->val);
+
+                if(curr->left){
+                    q.push(curr->left);
+                }
+
+                if(curr->right){
+                    q.push(curr->right);
+                }
             }
 
-            if(element->right != nullptr){
-                q.push(element->right);
-            }
-            }
-
-            if(!islefttoright){
+            if(!leftoright){
                 reverse(ans.begin(),ans.end());
             }
 
             result.push_back(ans);
 
-            islefttoright = !islefttoright;
-            }
+            leftoright = !leftoright;
+        }
 
         return result;
     }
