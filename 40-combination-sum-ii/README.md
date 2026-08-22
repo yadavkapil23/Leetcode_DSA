@@ -1,12 +1,4 @@
-# 40. Combination Sum II
-
-🟡 **Medium** &nbsp;|&nbsp; [View on LeetCode](https://leetcode.com/problems/combination-sum-ii/)
-
-**Topics:** Array, Backtracking
-
----
-
-<p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sum to <code>target</code>.</p>
+<h2><a href="https://leetcode.com/problems/combination-sum-ii">Combination Sum II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sum to <code>target</code>.</p>
 
 <p>Each number in <code>candidates</code>&nbsp;may only be used <strong>once</strong> in the combination.</p>
 
@@ -45,8 +37,3 @@
 	<li><code>1 &lt;=&nbsp;candidates[i] &lt;= 50</code></li>
 	<li><code>1 &lt;= target &lt;= 30</code></li>
 </ul>
-
-
----
-
-**My Solution:** [40-Combination-Sum-II.cpp](./40-Combination-Sum-II.cpp)
