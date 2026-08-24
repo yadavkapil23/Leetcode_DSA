@@ -1,23 +1,26 @@
 class Solution {
 public:
-    int rob(vector<int>& nums) {
-        int n = nums.size();
-        if(nums.size() <= 0){
-            return 0;
-        }
-        if(n==1){
+    int dynamicprog(vector<int> &dp,vector<int> &nums,int n){
+        if(n==0){
             return nums[0];
         }
 
-        int a = nums[0];
-        int b = max(nums[0],nums[1]);
-        int result = 0;
-        for(int i=2 ; i<n ; i++){
-           result = max(b,a+nums[i]);
-            a = b;
-            b = result;
+        if(n<0){
+            return 0;
         }
 
-        return b;
+        if(dp[n] != -1){
+            return dp[n];
+        }
+
+        int pick = nums[n] + dynamicprog(dp,nums,n-2);
+        int notpick = dynamicprog(dp,nums,n-1);
+
+      return  dp[n] = max(pick,notpick);
+    }
+    int rob(vector<int>& nums) {
+        int n = nums.size()-1;
+        vector<int> dp(n+1,-1);
+        return dynamicprog(dp,nums,n);
     }
 };
