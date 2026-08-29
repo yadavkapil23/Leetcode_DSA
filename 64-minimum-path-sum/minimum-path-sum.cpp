@@ -22,7 +22,7 @@ public:
         int m = grid.size();
         int n = grid[0].size();
         vector<vector<int>> dp(m,vector<int> (n,-1));
-        dp[0][0] = grid[0][0];
+        //dp[0][0] = grid[0][0];
 
         return mins(grid,dp,m-1,n-1);
 
