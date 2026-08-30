@@ -2,7 +2,7 @@ class Solution {
 public:
     int pathsum(vector<vector<int>> &dp,int m,int n,vector<vector<int>> &matrix){
         if(n < 0 || n >= matrix[0].size()){
-            return INT_MAX/2;
+            return 1e9;
         }
 
         if(m == 0){
