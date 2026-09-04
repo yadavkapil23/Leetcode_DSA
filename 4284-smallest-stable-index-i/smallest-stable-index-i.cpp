@@ -1,8 +1,6 @@
 class Solution {
 public:
     int firstStableIndex(vector<int>& nums, int k) {
-        int maxi = INT_MIN;
-        int mini = INT_MAX;
         int n = nums.size();
         vector<int> prefix(n);
         vector<int> suffix(n);
