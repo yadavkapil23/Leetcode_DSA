@@ -1,33 +1,40 @@
 class Solution {
 public:
-    int f(vector<int>& coins, int n, int amount, vector<vector<int>>& dp) {
-        if (amount == 0) return 0;
-
-        if (n == 0) {
-            if (amount % coins[0] == 0) return amount / coins[0];
-            else return INT_MAX;
+    int solve(vector<int> &coins,int amount,int n,vector<vector<int>> &dp){
+        if(amount == 0){
+            return 0;
         }
 
-        if (dp[n][amount] != -1) return dp[n][amount];  
-
-        int notTake = f(coins, n - 1, amount, dp);
-
-        int take = INT_MAX;
-        if (coins[n] <= amount) {
-            int mincoinneededtofill = f(coins, n, amount - coins[n], dp);
-            if (mincoinneededtofill != INT_MAX) {
-                take = 1 + mincoinneededtofill;
-            }
+        if(amount < 0){
+            return 1e9;
         }
 
-        return dp[n][amount] = min(take, notTake);  
+        if(n < 0){
+            return 1e9;
+        }
+
+        if(dp[n][amount] != -1){
+            return dp[n][amount];
+        }
+
+        int nottake = solve(coins,amount,n-1,dp);
+
+        int take = 1e9;
+        if(amount >= coins[n]){
+            take = 1 + solve(coins,amount-coins[n],n,dp);
+        }
+
+        dp[n][amount] = min(take,nottake);
+
+        return dp[n][amount];
     }
-
     int coinChange(vector<int>& coins, int amount) {
         int n = coins.size();
-        vector<vector<int>> dp(n, vector<int>(amount + 1, -1));
-        int result = f(coins, n - 1, amount, dp);
-        if (result == INT_MAX) return -1;
-        return result;
+        vector<vector<int>> dp(coins.size(), vector<int> (amount+1,-1));
+        int ans = solve(coins,amount,n-1,dp);
+        if(ans == 1e9){
+            return -1;
+        }
+        return ans;
     }
 };
