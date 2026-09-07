@@ -17,7 +17,6 @@ public:
             string s = sentences[i];
             int freq = counter(s);
             ans = max(freq,ans);
-            
         }
         return ans;
     }
